@@ -104,23 +104,16 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-            loadFeed(function(){
-              done();
+            loadFeed(0, function(){
+                done();
             });
-         });
-         function checkEntries(item){
-           loadFeed(item);
-         it('should have at least one entry', function(){
-           expect($('.feed')).contains('.entry');
+          });
+
+         it('should have at least one entry', function(done){
+           expect($('.feed .entry').length).toBeGreaterThan(0);
            done();
          });
-       };
-       for (var j = 0; j < allFeeds.length; j++){
-         checkEntries(j);
-       }
-
-
-       });
+      });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 

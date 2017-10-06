@@ -108,11 +108,17 @@ $(function() {
               done();
             });
          });
-
+         function checkEntries(item){
+           loadFeed(item);
          it('should have at least one entry', function(){
-           expect($('.feed')).toContain('.entry');
+           expect($('.feed')).contains('.entry');
            done();
          });
+       };
+       for (var j = 0; j < allFeeds.length; j++){
+         checkEntries(j);
+       }
+
 
        });
 

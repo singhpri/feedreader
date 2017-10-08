@@ -36,11 +36,11 @@ $(function() {
                 expect(url).toBeDefined();
                 expect(url).not.toEqual(null);
             });
-        };
+        }
 
         for (var i = 0; i < allFeeds.length; i++) {
             checkUrl(allFeeds[i].url);
-        };
+        }
 
 
         /* TODO: Write a test that loops through each feed
@@ -52,11 +52,11 @@ $(function() {
                 expect(name).toBeDefined();
                 expect(name.getText()).toBeNonEmptyString();
             });
-        };
+        }
 
-        for (var i = 0; i < allFeeds.length; i++) {
-            checkUrl(allFeeds[i].name);
-        };
+        for (var j = 0; j < allFeeds.length; j++) {
+            checkUrl(allFeeds[j].name);
+        }
     });
 
 
@@ -130,7 +130,7 @@ $(function() {
                 loadFeed(1);
                 expect(content).not.toEqual($('.feed').html());
                 done();
-            }
+            };
     });
 
 }());

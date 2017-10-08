@@ -104,10 +104,9 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-            loadFeed(0, function(){
-                done();
+            loadFeed(0, done);
             });
-          });
+        
 
          it('should have at least one entry', function(done){
            expect($('.feed .entry').length).toBeGreaterThan(0);
@@ -126,7 +125,7 @@ describe ('New Feed Selection', function(){
             loadFeed(0, done);
             content = $('.feed').html();
             });
-          
+
         it('should not have the same content'), function(done){
           loadFeed(1);
           expect(content).not.toEqual($('.feed').html());

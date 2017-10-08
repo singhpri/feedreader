@@ -125,12 +125,12 @@ $(function() {
             content = $('.feed').html();
         });
 
-        it('should not have the same content'),
+        it('should not have the same content',
             function(done) {
                 loadFeed(1);
                 expect(content).not.toEqual($('.feed').html());
                 done();
-            };
+            });
     });
 
 }());

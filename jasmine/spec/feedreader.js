@@ -15,7 +15,7 @@ $(function() {
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
-         * empty. 
+         * empty.
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -52,7 +52,7 @@ $(function() {
         }
 
         for (var j = 0; j < allFeeds.length; j++) {
-            checkUrl(allFeeds[j].name);
+            ccheckName(allFeeds[j].name);
         }
     });
 

@@ -47,12 +47,12 @@ $(function() {
         function checkName(name) {
             it('is defined', function() {
                 expect(name).toBeDefined();
-                expect(name.getText()).not.toEqual('');
+                expect(name).not.toEqual('');
             });
         }
 
         for (var j = 0; j < allFeeds.length; j++) {
-            ccheckName(allFeeds[j].name);
+            checkName(allFeeds[j].name);
         }
     });
 
@@ -63,7 +63,7 @@ $(function() {
         /* test that ensures the menu element is
          * hidden by default.
          */
-         var container = (document.body).classList;
+        var container = (document.body).classList;
         it("menu-hidden should be default", function() {
             expect(container).toContain('menu-hidden');
         });
@@ -112,18 +112,18 @@ $(function() {
         var content;
 
         beforeEach(function(done) {
-            loadFeed(0, function(){
-              content = $('.feed').html();
-              done();
+            loadFeed(0, function() {
+                content = $('.feed').html();
+                done();
             });
         });
 
         it('should not have the same content', function(done) {
-                loadFeed(1, function(){
+            loadFeed(1, function() {
                 expect(content).not.toEqual($('.feed').html());
                 done();
-              });
             });
+        });
     });
 
 }());
